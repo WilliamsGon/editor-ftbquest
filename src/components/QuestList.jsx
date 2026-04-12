@@ -10,10 +10,11 @@ function QuestList({ quests, onSelect, exportButton, onCreateQuest }) {
         // Search by ID or by item in tasks
         if (q.id && q.id.toLowerCase().includes(searchLower)) return true;
         if (q.tasks) {
-            return q.tasks.some(t =>
-                (t.id && t.id.toLowerCase().includes(searchLower)) ||
-                (t.item && t.item.id && t.item.id.toLowerCase().includes(searchLower))
-            );
+            return q.tasks.some(t => {
+                const tItemId = typeof t.item === 'string' ? t.item : t.item?.id;
+                return (t.id && t.id.toLowerCase().includes(searchLower)) ||
+                       (tItemId && tItemId.toLowerCase().includes(searchLower));
+            });
         }
         return false;
     });
@@ -47,9 +48,10 @@ function QuestList({ quests, onSelect, exportButton, onCreateQuest }) {
 
                     if (quest.tasks && quest.tasks.length > 0) {
                         const task = quest.tasks[0];
-                        if (task.item && task.item.id) {
+                        const itemId = typeof task.item === 'string' ? task.item : task.item?.id;
+                        if (itemId) {
                             const count = task.count ? (task.count.value || task.count) : 1;
-                            const itemName = task.item.id.split(':').pop().replace(/_/g, ' ');
+                            const itemName = itemId.split(':').pop().replace(/_/g, ' ');
                             label = `${count}x ${itemName}`;
                             subLabel = quest.id;
                         }

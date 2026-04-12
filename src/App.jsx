@@ -10,6 +10,7 @@ import MapView from './components/MapView';
 import CreateQuestModal from './components/CreateQuestModal';
 import TranslationTable from './components/TranslationTable';
 import { SNBT } from './utils/snbt';
+import { detectSnbtVersion } from './utils/versionDetector';
 
 function App() {
   const [data, setData] = useState(null);
@@ -20,6 +21,7 @@ function App() {
   const [translationData, setTranslationData] = useState(null);
   const [translationFilename, setTranslationFilename] = useState('');
   const [appMode, setAppMode] = useState('quests'); // 'quests' or 'translation'
+  const [snbtVersion, setSnbtVersion] = useState('1.21.1');
 
   const handleFileImport = (content, name) => {
     try {
@@ -27,6 +29,7 @@ function App() {
       setData(parsed);
       setFilename(name);
       setSelectedQuestId(null);
+      setSnbtVersion(detectSnbtVersion(parsed));
     } catch (e) {
       alert("Error parsing file: " + e.message);
     }
@@ -85,6 +88,12 @@ function App() {
       <header>
         <div className="header-left">
           <span><h1>SNBT Editor</h1> by AtilaZone</span>
+          {data && appMode === 'quests' && (
+            <span className="badge version-badge" style={{
+              background: snbtVersion === '1.20.1' ? '#ff9800' : '#4caf50',
+              color: 'white', padding: '2px 8px', borderRadius: '12px', fontSize: '0.8rem', marginLeft: '10px'
+            }}>Modo: {snbtVersion}</span>
+          )}
           {filename && appMode === 'quests' && <span className="filename">{filename}</span>}
           {translationFilename && appMode === 'translation' && <span className="filename">{translationFilename}</span>}
         </div>
@@ -138,7 +147,7 @@ function App() {
                         🗺️ Map
                       </button>
                     </div>
-                    <Exporter data={data} filename={filename} />
+                    <Exporter data={data} filename={filename} currentVersion={snbtVersion} />
                   </div>
                 }
               />
@@ -165,34 +174,34 @@ function App() {
                       🗺️ Map
                     </button>
                   </div>
-                  <Exporter data={data} filename={filename} />
+                  <Exporter data={data} filename={filename} currentVersion={snbtVersion} />
                 </div>
-                <TableView data={data} onUpdate={setData} />
+                <TableView data={data} onUpdate={setData} snbtVersion={snbtVersion} />
               </div>
             ) : (
               <div className="table-view-wrapper">
                 <div className="table-view-header">
                   <div className="view-toggle">
-                    <button
-                      className={`toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
-                      onClick={() => setViewMode('grid')}
-                    >
-                      🔲 Grid
-                    </button>
-                    <button
-                      className={`toggle-btn ${viewMode === 'table' ? 'active' : ''}`}
-                      onClick={() => setViewMode('table')}
-                    >
-                      📊 Table
-                    </button>
-                    <button
-                      className={`toggle-btn ${viewMode === 'map' ? 'active' : ''}`}
-                      onClick={() => setViewMode('map')}
-                    >
-                      🗺️ Map
-                    </button>
+                      <button
+                        className={`toggle-btn ${viewMode === 'grid' ? 'active' : ''}`}
+                        onClick={() => setViewMode('grid')}
+                      >
+                        🔲 Grid
+                      </button>
+                      <button
+                        className={`toggle-btn ${viewMode === 'table' ? 'active' : ''}`}
+                        onClick={() => setViewMode('table')}
+                      >
+                        📊 Table
+                      </button>
+                      <button
+                        className={`toggle-btn ${viewMode === 'map' ? 'active' : ''}`}
+                        onClick={() => setViewMode('map')}
+                      >
+                        🗺️ Map
+                      </button>
                   </div>
-                  <Exporter data={data} filename={filename} />
+                  <Exporter data={data} filename={filename} currentVersion={snbtVersion} />
                 </div>
                 <MapView quests={data.quests || []} onSelect={setSelectedQuestId} />
               </div>
@@ -203,6 +212,7 @@ function App() {
                 quest={data.quests.find(q => q.id === selectedQuestId)}
                 onUpdate={handleQuestUpdate}
                 onClose={() => setSelectedQuestId(null)}
+                snbtVersion={snbtVersion}
               />
             )}
             {showCreateModal && (

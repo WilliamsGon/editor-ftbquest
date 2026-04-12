@@ -4,7 +4,7 @@ import { TASK_TYPES, REWARD_TYPES, getTaskFields, getRewardFields } from '../uti
 /**
  * Component to render dynamic fields based on task type
  */
-export function TaskFields({ task, index, onFieldChange }) {
+export function TaskFields({ task, index, onFieldChange, snbtVersion }) {
     const taskType = task.type;
 
     // Helper to get value, handling SNBT number objects
@@ -34,9 +34,10 @@ export function TaskFields({ task, index, onFieldChange }) {
                     <label>Item ID</label>
                     <input
                         type="text"
-                        value={task.item?.id || ''}
+                        value={typeof task.item === 'string' ? task.item : (task.item?.id || '')}
                         onChange={(e) => {
-                            const newItem = { ...task.item, id: e.target.value };
+                            const val = e.target.value;
+                            const newItem = typeof task.item === 'string' ? val : { ...task.item, id: val };
                             onFieldChange('item', newItem);
                         }}
                         placeholder="minecraft:stone"
@@ -292,7 +293,7 @@ export function TaskFields({ task, index, onFieldChange }) {
 /**
  * Component to render dynamic fields based on reward type
  */
-export function RewardFields({ reward, index, onFieldChange }) {
+export function RewardFields({ reward, index, onFieldChange, snbtVersion }) {
     const rewardType = reward.type;
 
     // Helper to get value, handling SNBT number objects
@@ -319,9 +320,10 @@ export function RewardFields({ reward, index, onFieldChange }) {
                     <label>Item ID</label>
                     <input
                         type="text"
-                        value={reward.item?.id || ''}
+                        value={typeof reward.item === 'string' ? reward.item : (reward.item?.id || '')}
                         onChange={(e) => {
-                            const newItem = { ...reward.item, id: e.target.value };
+                            const val = e.target.value;
+                            const newItem = typeof reward.item === 'string' ? val : { ...reward.item, id: val };
                             onFieldChange('item', newItem);
                         }}
                         placeholder="minecraft:diamond"
@@ -390,14 +392,27 @@ export function RewardFields({ reward, index, onFieldChange }) {
                         placeholder="/give @p minecraft:diamond"
                     />
                 </div>
-                <div className="form-group">
-                    <label>Permission Level</label>
-                    <input
-                        type="number"
-                        value={reward.permission_level || 2}
-                        onChange={(e) => onFieldChange('permission_level', Number(e.target.value))}
-                    />
-                </div>
+                {snbtVersion === '1.20.1' ? (
+                    <div className="form-group checkbox">
+                        <label>
+                            <input
+                                type="checkbox"
+                                checked={reward.elevate_perms === true}
+                                onChange={(e) => onFieldChange('elevate_perms', e.target.checked ? true : false)}
+                            />
+                            Elevate Perms
+                        </label>
+                    </div>
+                ) : (
+                    <div className="form-group">
+                        <label>Permission Level</label>
+                        <input
+                            type="number"
+                            value={reward.permission_level || 2}
+                            onChange={(e) => onFieldChange('permission_level', Number(e.target.value))}
+                        />
+                    </div>
+                )}
                 <div className="form-group checkbox">
                     <label>
                         <input

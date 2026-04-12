@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { TaskFields, RewardFields } from './DynamicFields';
 
-function QuestEditor({ quest, onUpdate, onClose }) {
+function QuestEditor({ quest, onUpdate, onClose, snbtVersion }) {
     const [editedQuest, setEditedQuest] = useState(quest);
     const [activeTab, setActiveTab] = useState('general');
 
@@ -252,6 +252,7 @@ function QuestEditor({ quest, onUpdate, onClose }) {
                                                 task={task}
                                                 index={index}
                                                 onFieldChange={(field, value) => handleArrayItemChange('tasks', index, field, value)}
+                                                snbtVersion={snbtVersion}
                                             />
                                         </div>
                                     </div>
@@ -278,6 +279,7 @@ function QuestEditor({ quest, onUpdate, onClose }) {
                                                 reward={reward}
                                                 index={index}
                                                 onFieldChange={(field, value) => handleArrayItemChange('rewards', index, field, value)}
+                                                snbtVersion={snbtVersion}
                                             />
                                         </div>
                                     </div>
