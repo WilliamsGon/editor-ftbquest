@@ -24,14 +24,14 @@ function Exporter({ data, filename, currentVersion }) {
                                 if (targetVersion === '1.20.1') {
                                     if (typeof task.item === 'object' && task.item !== null) {
                                         delete task.item.components;
-                                        if (task.item.Count !== undefined) {
-                                            task.item.count = task.item.Count; // Normalize to lowercase count if it was uppercase
-                                            delete task.item.Count;
+                                        if (task.item.count !== undefined) {
+                                            task.item.Count = task.item.count;
+                                            delete task.item.count;
                                         }
                                         const keys = Object.keys(task.item);
                                         if (keys.length === 1 && keys[0] === 'id') {
                                             task.item = task.item.id;
-                                        } else if (keys.length === 2 && keys.includes('id') && keys.includes('count')) {
+                                        } else if (keys.length === 2 && keys.includes('id') && keys.includes('Count')) {
                                             task.item = task.item.id;
                                         }
                                     }
@@ -62,10 +62,14 @@ function Exporter({ data, filename, currentVersion }) {
                                 if (targetVersion === '1.20.1') {
                                     if (typeof reward.item === 'object' && reward.item !== null) {
                                         delete reward.item.components;
+                                        if (reward.item.count !== undefined) {
+                                            reward.item.Count = reward.item.count;
+                                            delete reward.item.count;
+                                        }
                                         const keys = Object.keys(reward.item);
                                         if (keys.length === 1 && keys[0] === 'id') {
                                             reward.item = reward.item.id;
-                                        } else if (keys.length === 2 && keys.includes('id') && keys.includes('count')) {
+                                        } else if (keys.length === 2 && keys.includes('id') && keys.includes('Count')) {
                                             reward.item = reward.item.id;
                                         }
                                     }

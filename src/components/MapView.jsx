@@ -138,9 +138,14 @@ function MapView({ quests, onSelect }) {
     const getQuestLabel = (quest) => {
         if (quest.tasks && quest.tasks.length > 0) {
             const task = quest.tasks[0];
-            if (task.item && task.item.id) {
+            const itemId = typeof task.item === 'string' ? task.item : task.item?.id;
+            if (itemId) {
                 const count = task.count ? (task.count.value || task.count) : 1;
-                const itemName = task.item.id.split(':').pop().replace(/_/g, ' ');
+                if (itemId === 'ftbfiltersystem:smart_filter' && task.item?.tag?.["ftbfiltersystem:filter"]) {
+                    const filterStr = task.item.tag["ftbfiltersystem:filter"].replace('ftbfiltersystem:item_tag(', '').replace(')', '');
+                    return `${count}x Filter: ${filterStr}`;
+                }
+                const itemName = itemId.split(':').pop().replace(/_/g, ' ');
                 return `${count}x ${itemName}`;
             }
             if (task.entity) {

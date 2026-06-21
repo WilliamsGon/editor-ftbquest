@@ -334,7 +334,12 @@ function TableView({ data, onUpdate }) {
             questId: (t) => t.quest.id,
             taskId: (t) => t.task.id,
             type: (t) => t.task.type,
-            itemId: (t) => typeof t.task.item === 'string' ? t.task.item : t.task.item?.id,
+            itemId: (t) => {
+                if (typeof t.task.item === 'object' && t.task.item?.id === 'ftbfiltersystem:smart_filter') {
+                    return t.task.item?.tag?.["ftbfiltersystem:filter"];
+                }
+                return typeof t.task.item === 'string' ? t.task.item : t.task.item?.id;
+            },
             entity: (t) => t.task.entity,
             dimension: (t) => t.task.dimension,
             biome: (t) => t.task.biome,
@@ -449,13 +454,23 @@ function TableView({ data, onUpdate }) {
                                 <td className="readonly">{task.type}</td>
                                 <td>
                                     {task.item && (
-                                        <input
-                                            type="text"
-                                            value={getCellValue(typeof task.item === 'string' ? `quests.${qIndex}.tasks.${tIndex}.item` : `quests.${qIndex}.tasks.${tIndex}.item.id`, typeof task.item === 'string' ? task.item : (task.item?.id || ''))}
-                                            onChange={(e) => handleCellEdit(typeof task.item === 'string' ? `quests.${qIndex}.tasks.${tIndex}.item` : `quests.${qIndex}.tasks.${tIndex}.item.id`, e.target.value)}
-                                            className="table-input"
-                                            placeholder="minecraft:item"
-                                        />
+                                        typeof task.item === 'object' && task.item?.id === 'ftbfiltersystem:smart_filter' ? (
+                                            <input
+                                                type="text"
+                                                value={getCellValue(`quests.${qIndex}.tasks.${tIndex}.item.tag.ftbfiltersystem:filter`, task.item?.tag?.["ftbfiltersystem:filter"] || '')}
+                                                onChange={(e) => handleCellEdit(`quests.${qIndex}.tasks.${tIndex}.item.tag.ftbfiltersystem:filter`, e.target.value)}
+                                                className="table-input filter-input"
+                                                title="Smart Filter Tag"
+                                            />
+                                        ) : (
+                                            <input
+                                                type="text"
+                                                value={getCellValue(typeof task.item === 'string' ? `quests.${qIndex}.tasks.${tIndex}.item` : `quests.${qIndex}.tasks.${tIndex}.item.id`, typeof task.item === 'string' ? task.item : (task.item?.id || ''))}
+                                                onChange={(e) => handleCellEdit(typeof task.item === 'string' ? `quests.${qIndex}.tasks.${tIndex}.item` : `quests.${qIndex}.tasks.${tIndex}.item.id`, e.target.value)}
+                                                className="table-input"
+                                                placeholder="minecraft:item"
+                                            />
+                                        )
                                     )}
                                 </td>
                                 <td>
@@ -518,7 +533,12 @@ function TableView({ data, onUpdate }) {
             questId: (r) => r.quest.id,
             rewardId: (r) => r.reward.id,
             type: (r) => r.reward.type,
-            itemId: (r) => typeof r.reward.item === 'string' ? r.reward.item : r.reward.item?.id,
+            itemId: (r) => {
+                if (typeof r.reward.item === 'object' && r.reward.item?.id === 'ftbfiltersystem:smart_filter') {
+                    return r.reward.item?.tag?.["ftbfiltersystem:filter"];
+                }
+                return typeof r.reward.item === 'string' ? r.reward.item : r.reward.item?.id;
+            },
             command: (r) => r.reward.command,
         };
 
@@ -594,13 +614,23 @@ function TableView({ data, onUpdate }) {
                             <td className="readonly">{reward.type}</td>
                             <td>
                                 {reward.item && (
-                                    <input
-                                        type="text"
-                                        value={getCellValue(typeof reward.item === 'string' ? `quests.${qIndex}.rewards.${rIndex}.item` : `quests.${qIndex}.rewards.${rIndex}.item.id`, typeof reward.item === 'string' ? reward.item : (reward.item?.id || ''))}
-                                        onChange={(e) => handleCellEdit(typeof reward.item === 'string' ? `quests.${qIndex}.rewards.${rIndex}.item` : `quests.${qIndex}.rewards.${rIndex}.item.id`, e.target.value)}
-                                        className="table-input"
-                                        placeholder="minecraft:item"
-                                    />
+                                    typeof reward.item === 'object' && reward.item?.id === 'ftbfiltersystem:smart_filter' ? (
+                                        <input
+                                            type="text"
+                                            value={getCellValue(`quests.${qIndex}.rewards.${rIndex}.item.tag.ftbfiltersystem:filter`, reward.item?.tag?.["ftbfiltersystem:filter"] || '')}
+                                            onChange={(e) => handleCellEdit(`quests.${qIndex}.rewards.${rIndex}.item.tag.ftbfiltersystem:filter`, e.target.value)}
+                                            className="table-input filter-input"
+                                            title="Smart Filter Tag"
+                                        />
+                                    ) : (
+                                        <input
+                                            type="text"
+                                            value={getCellValue(typeof reward.item === 'string' ? `quests.${qIndex}.rewards.${rIndex}.item` : `quests.${qIndex}.rewards.${rIndex}.item.id`, typeof reward.item === 'string' ? reward.item : (reward.item?.id || ''))}
+                                            onChange={(e) => handleCellEdit(typeof reward.item === 'string' ? `quests.${qIndex}.rewards.${rIndex}.item` : `quests.${qIndex}.rewards.${rIndex}.item.id`, e.target.value)}
+                                            className="table-input"
+                                            placeholder="minecraft:item"
+                                        />
+                                    )
                                 )}
                             </td>
                             <td>

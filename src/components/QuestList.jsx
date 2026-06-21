@@ -51,8 +51,13 @@ function QuestList({ quests, onSelect, exportButton, onCreateQuest }) {
                         const itemId = typeof task.item === 'string' ? task.item : task.item?.id;
                         if (itemId) {
                             const count = task.count ? (task.count.value || task.count) : 1;
-                            const itemName = itemId.split(':').pop().replace(/_/g, ' ');
-                            label = `${count}x ${itemName}`;
+                            if (itemId === 'ftbfiltersystem:smart_filter' && task.item?.tag?.["ftbfiltersystem:filter"]) {
+                                const filterStr = task.item.tag["ftbfiltersystem:filter"].replace('ftbfiltersystem:item_tag(', '').replace(')', '');
+                                label = `${count}x Filter: ${filterStr}`;
+                            } else {
+                                const itemName = itemId.split(':').pop().replace(/_/g, ' ');
+                                label = `${count}x ${itemName}`;
+                            }
                             subLabel = quest.id;
                         }
                     }

@@ -37,12 +37,35 @@ export function TaskFields({ task, index, onFieldChange, snbtVersion }) {
                         value={typeof task.item === 'string' ? task.item : (task.item?.id || '')}
                         onChange={(e) => {
                             const val = e.target.value;
-                            const newItem = typeof task.item === 'string' ? val : { ...task.item, id: val };
+                            let newItem;
+                            if (val === 'ftbfiltersystem:smart_filter' && snbtVersion === '1.20.1') {
+                                newItem = { 
+                                    ...(typeof task.item === 'object' ? task.item : {}), 
+                                    id: val, 
+                                    tag: (typeof task.item === 'object' && task.item?.tag) ? task.item.tag : { "ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:item)" } 
+                                };
+                            } else {
+                                newItem = typeof task.item === 'string' ? val : { ...task.item, id: val };
+                            }
                             onFieldChange('item', newItem);
                         }}
                         placeholder="minecraft:stone"
                     />
                 </div>
+                {snbtVersion === '1.20.1' && typeof task.item === 'object' && task.item?.id === 'ftbfiltersystem:smart_filter' && (
+                    <div className="form-group">
+                        <label>Smart Filter Tag</label>
+                        <input
+                            type="text"
+                            value={task.item?.tag?.["ftbfiltersystem:filter"] || ''}
+                            onChange={(e) => {
+                                const newTag = { ...(task.item.tag || {}), "ftbfiltersystem:filter": e.target.value };
+                                onFieldChange('item', { ...task.item, tag: newTag });
+                            }}
+                            placeholder="ftbfiltersystem:item_tag(minecraft:beds)"
+                        />
+                    </div>
+                )}
                 <div className="form-group">
                     <label>Count</label>
                     <input
@@ -323,12 +346,35 @@ export function RewardFields({ reward, index, onFieldChange, snbtVersion }) {
                         value={typeof reward.item === 'string' ? reward.item : (reward.item?.id || '')}
                         onChange={(e) => {
                             const val = e.target.value;
-                            const newItem = typeof reward.item === 'string' ? val : { ...reward.item, id: val };
+                            let newItem;
+                            if (val === 'ftbfiltersystem:smart_filter' && snbtVersion === '1.20.1') {
+                                newItem = { 
+                                    ...(typeof reward.item === 'object' ? reward.item : {}), 
+                                    id: val, 
+                                    tag: (typeof reward.item === 'object' && reward.item?.tag) ? reward.item.tag : { "ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:item)" } 
+                                };
+                            } else {
+                                newItem = typeof reward.item === 'string' ? val : { ...reward.item, id: val };
+                            }
                             onFieldChange('item', newItem);
                         }}
                         placeholder="minecraft:diamond"
                     />
                 </div>
+                {snbtVersion === '1.20.1' && typeof reward.item === 'object' && reward.item?.id === 'ftbfiltersystem:smart_filter' && (
+                    <div className="form-group">
+                        <label>Smart Filter Tag</label>
+                        <input
+                            type="text"
+                            value={reward.item?.tag?.["ftbfiltersystem:filter"] || ''}
+                            onChange={(e) => {
+                                const newTag = { ...(reward.item.tag || {}), "ftbfiltersystem:filter": e.target.value };
+                                onFieldChange('item', { ...reward.item, tag: newTag });
+                            }}
+                            placeholder="ftbfiltersystem:item_tag(minecraft:beds)"
+                        />
+                    </div>
+                )}
                 <div className="form-group">
                     <label>Count</label>
                     <input
