@@ -1,0 +1,2343 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: madera
+	group: 3A7C616923904F66
+	id: 3B0BBCBBF5D1E908
+	images: [
+		{
+			height: 3d
+			image: "kubejs:textures/questpics/capitulos/hc_era_madera.png"
+			rotation: 0d
+			width: 17d
+			x: 4.5d
+			y: -10d
+		}
+	]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [ 741E0D145109599C ]
+			id: 53EE6B878BEE8579
+			tasks: [
+				{
+					consume_items: true
+					icon: {
+						Count: 1
+						id: "minecraft:leather_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: 585B52C754A8535A
+					type: item
+				}
+			]
+			x: -9d
+			y: 2d
+		}
+		{
+			dependencies: [ 741E0D145109599C ]
+			id: 2076074B4C5602AE
+			tasks: [
+				{
+					consume_items: true
+					id: 4D6A480AA97CA8C3
+					item: {
+						id: "minecraft:leather_chestplate"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: -8d
+			y: 2d
+		}
+		{
+			dependencies: [ 741E0D145109599C ]
+			id: 137FA4666C0CBFD1
+			tasks: [
+				{
+					consume_items: true
+					id: 1D3B76E6046F3359
+					item: {
+						id: "minecraft:leather_leggings"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: -7d
+			y: 2d
+		}
+		{
+			dependencies: [ 741E0D145109599C ]
+			id: 27D6B3C3B1366F60
+			tasks: [
+				{
+					consume_items: true
+					id: 6C4581AE4705F2FC
+					item: {
+						id: "minecraft:leather_boots"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: -6d
+			y: 2d
+		}
+		{
+			dependencies: [ 415A0413F7B1D3E0 ]
+			id: 0B24E79685E07295
+			tasks: [
+				{
+					consume_items: true
+					id: 50E429C13BD0D8F2
+					item: {
+						id: "minecraft:wooden_pickaxe"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: 2d
+			y: -1.5d
+		}
+		{
+			dependencies: [ 415A0413F7B1D3E0 ]
+			id: 1EDDA4966478DCF1
+			tasks: [
+				{
+					consume_items: true
+					id: 19EA123CA39980FA
+					item: {
+						id: "minecraft:wooden_axe"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: 3d
+			y: -1.5d
+		}
+		{
+			dependencies: [ 415A0413F7B1D3E0 ]
+			id: 3C3A4B6849BA3EF0
+			tasks: [
+				{
+					consume_items: true
+					id: 186B469EF4E052E6
+					item: {
+						id: "minecraft:wooden_shovel"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: 4d
+			y: -1.5d
+		}
+		{
+			dependencies: [ 415A0413F7B1D3E0 ]
+			id: 148FD20341BC0B10
+			tasks: [
+				{
+					consume_items: true
+					id: 77F4AA65C79375D7
+					item: {
+						id: "minecraft:wooden_hoe"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: 5d
+			y: -1.5d
+		}
+		{
+			dependencies: [ 415A0413F7B1D3E0 ]
+			id: 3D3EEC40A43DBE02
+			tasks: [
+				{
+					consume_items: true
+					id: 3DF060EDECE86B18
+					item: {
+						id: "minecraft:wooden_sword"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: 1d
+			y: -1.5d
+		}
+		{
+			dependencies: [ 152FCC6ADB566976 ]
+			id: 540AC015CC1E7E34
+			tasks: [
+				{
+					entity: "minecraft:cow"
+					id: 3E0B8626E8F7C117
+					type: kill
+					value: 15L
+				}
+			]
+			x: -7.5d
+			y: -1d
+		}
+		{
+			dependencies: [ 540AC015CC1E7E34 ]
+			id: 741E0D145109599C
+			tasks: [
+				{
+					consume_items: true
+					count: 15L
+					id: 3763563AC548A156
+					item: "minecraft:leather"
+					type: item
+				}
+			]
+			x: -7.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 124313C28EFD52AC ]
+			id: 415A0413F7B1D3E0
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: 4AAD178C29418DCD
+					item: "minecraft:stick"
+					type: item
+				}
+			]
+			x: 4d
+			y: -3d
+		}
+		{
+			dependencies: [ 45440F63CDEC407F ]
+			id: 1A0271B9049C493A
+			shape: octagon
+			size: 1.5d
+			tasks: [
+				{
+					consume_items: true
+					count: 100L
+					id: 138A48AE74157F01
+					item: "minecraft:oak_log"
+					type: item
+				}
+			]
+			x: -3.5d
+			y: -6.5d
+		}
+		{
+			description: [
+				"Bienvenidx a la &9Era de Cuero y Madera&r"
+				""
+				"Empezamos la aventura con tus primeras herramientas de Madera y Armadura de Cuero."
+				""
+				"Explora el Mundo y encuentra tu lugar en él, deja tu huella y comienza tus primeras construcciones."
+			]
+			icon: "minecraft:grass_block"
+			id: 45440F63CDEC407F
+			rewards: [
+				{
+					id: 63F6B3C7C89AA5D4
+					type: xp_levels
+					xp_levels: 10
+				}
+			]
+			size: 2d
+			tasks: [
+				{
+					id: 10DA86783D7C9B9F
+					title: "Era Cuero/Madera"
+					type: checkmark
+				}
+			]
+			x: -1.25d
+			y: -5.25d
+		}
+		{
+			dependencies: [ 45440F63CDEC407F ]
+			id: 502E1CC83D03B6DE
+			shape: octagon
+			size: 1.5d
+			tasks: [
+				{
+					consume_items: true
+					count: 100L
+					id: 66502B75290E6372
+					item: "minecraft:spruce_log"
+					type: item
+				}
+			]
+			x: -1.25d
+			y: -7.5d
+		}
+		{
+			dependencies: [ 45440F63CDEC407F ]
+			id: 18F25599290A6257
+			shape: octagon
+			size: 1.5d
+			tasks: [
+				{
+					consume_items: true
+					count: 100L
+					id: 4FDC6ED7CAFFE599
+					item: "minecraft:birch_log"
+					type: item
+				}
+			]
+			x: 1d
+			y: -6.5d
+		}
+		{
+			dependencies: [ 45440F63CDEC407F ]
+			id: 55A49F89E2E562A1
+			shape: octagon
+			size: 1.5d
+			tasks: [
+				{
+					consume_items: true
+					count: 100L
+					id: 16C06679493BB161
+					item: "minecraft:jungle_log"
+					type: item
+				}
+			]
+			x: -1.25d
+			y: -3d
+		}
+		{
+			dependencies: [ 45440F63CDEC407F ]
+			id: 30078754E84D0744
+			shape: octagon
+			size: 1.5d
+			tasks: [
+				{
+					consume_items: true
+					count: 100L
+					id: 14DC3EF04CBA4C3A
+					item: "minecraft:acacia_log"
+					type: item
+				}
+			]
+			x: 1d
+			y: -4d
+		}
+		{
+			dependencies: [ 45440F63CDEC407F ]
+			id: 6556F0A96C12DEE7
+			shape: octagon
+			size: 1.5d
+			tasks: [
+				{
+					consume_items: true
+					count: 100L
+					id: 6D37B7142C9393B1
+					item: "minecraft:dark_oak_log"
+					type: item
+				}
+			]
+			x: -3.5d
+			y: -4d
+		}
+		{
+			dependencies: [ 152FCC6ADB566976 ]
+			id: 06654D9ABDFDD76F
+			tasks: [
+				{
+					entity: "minecraft:chicken"
+					id: 689F991E322E4386
+					type: kill
+					value: 15L
+				}
+			]
+			x: -9.5d
+			y: -3d
+		}
+		{
+			dependencies: [ 152FCC6ADB566976 ]
+			id: 704711B81250C16A
+			tasks: [
+				{
+					entity: "minecraft:sheep"
+					id: 61DA0F6D97B0CB87
+					type: kill
+					value: 15L
+				}
+			]
+			x: -7.5d
+			y: -5d
+		}
+		{
+			dependencies: [ 152FCC6ADB566976 ]
+			id: 37B921ED409DAC17
+			tasks: [
+				{
+					entity: "minecraft:pig"
+					id: 3A4B65DBE2664337
+					type: kill
+					value: 15L
+				}
+			]
+			x: -5.5d
+			y: -3d
+		}
+		{
+			description: [
+				"Vamos &6Granjero&r"
+				""
+				"Primero encuentra algunos animales reproducelos y consigue sus recursos para crear poder crear mas obtejos basicos para la supervivencia."
+			]
+			icon: "artifacts:villager_hat"
+			id: 152FCC6ADB566976
+			rewards: [
+				{
+					id: 49A6B7A467B279B1
+					type: xp_levels
+					xp_levels: 10
+				}
+			]
+			shape: octagon
+			size: 2d
+			tasks: [
+				{
+					id: 1C3109474D7D90AE
+					title: Granja
+					type: checkmark
+				}
+			]
+			x: -7.5d
+			y: -3d
+		}
+		{
+			dependencies: [ 415A0413F7B1D3E0 ]
+			id: 0EB4F43B065EC56D
+			tasks: [
+				{
+					consume_items: true
+					id: 024F76BA1D735720
+					item: {
+						id: "minecraft:bow"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: 6d
+			y: -1.5d
+		}
+		{
+			id: 5C7A310C49994175
+			shape: none
+			tasks: [
+				{
+					consume_items: true
+					id: 4F42F826730CB8AE
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						tag: {
+							"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:beds)"
+						}
+						count: 1
+					}
+					title: "Any #minecraft:beds"
+					type: item
+				}
+			]
+			title: "Craftea 1 cama"
+			x: -8.5d
+			y: -8d
+		}
+		{
+			id: 124313C28EFD52AC
+			tasks: [
+				{
+					consume_items: true
+					id: 0887D230972D8452
+					item: "minecraft:crafting_table"
+					type: item
+				}
+			]
+			x: 4d
+			y: -4.5d
+		}
+		{
+			id: 586132D55270750A
+			tasks: [
+				{
+					consume_items: true
+					id: 565DFC91C013E120
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						tag: {
+							"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(comforts:sleeping_bags)"
+						}
+						count: 1
+					}
+					title: "Any #comforts:sleeping_bags"
+					type: item
+				}
+			]
+			title: "Craftea 1 Bolsa de dormir"
+			x: -6.5d
+			y: -8d
+		}
+		{
+			id: 09FF9CFF18349478
+			tasks: [
+				{
+					consume_items: true
+					id: 55121023A2D5E697
+					item: {
+						id: "ftbfiltersystem:smart_filter"
+						tag: {
+							"ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:wool)"
+						}
+						count: 1
+					}
+					title: Lana
+					type: item
+				}
+			]
+			title: "20x de Lana"
+			x: -7.5d
+			y: -6.5d
+		}
+		{
+			id: 51A3E8DC90430FE2
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 67DB41147753C80C
+					item: "minecraft:egg"
+					type: item
+				}
+			]
+			x: -11d
+			y: -3d
+		}
+		{
+			dependencies: [
+				704711B81250C16A
+				540AC015CC1E7E34
+				06654D9ABDFDD76F
+				37B921ED409DAC17
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			icon: "atilas_economy:dracma_copper"
+			id: 36F72609DD0A4683
+			rewards: [
+				{
+					count: 5
+					id: 757AEAF4D2497527
+					item: "atilas_economy:dracma_copper"
+					type: item
+				}
+			]
+			tasks: [
+				{
+					id: 263376FB05B53FA4
+					title: "Matar Animales"
+					type: checkmark
+				}
+			]
+			x: -5.5d
+			y: -5d
+		}
+		{
+			dependencies: [
+				18F25599290A6257
+				55A49F89E2E562A1
+				6556F0A96C12DEE7
+				30078754E84D0744
+				502E1CC83D03B6DE
+				1A0271B9049C493A
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			icon: "atilas_economy:dracma_copper"
+			id: 0067A488702B054C
+			rewards: [
+				{
+					count: 5
+					id: 774A1F00E7333872
+					item: "atilas_economy:dracma_copper"
+					type: item
+				}
+			]
+			tasks: [
+				{
+					id: 285085855EAC5FD5
+					title: "Consigue Troncos"
+					type: checkmark
+				}
+			]
+			x: -0.5d
+			y: -6.5d
+		}
+		{
+			dependencies: [
+				148FD20341BC0B10
+				3D3EEC40A43DBE02
+				1EDDA4966478DCF1
+				0B24E79685E07295
+				3C3A4B6849BA3EF0
+				0EB4F43B065EC56D
+				67ECDCD87BB436AF
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			icon: "atilas_economy:dracma_copper"
+			id: 5EDB8DBC61D98857
+			rewards: [
+				{
+					count: 2
+					id: 7C795652710EAA84
+					item: "atilas_economy:dracma_copper"
+					type: item
+				}
+			]
+			tasks: [
+				{
+					id: 4614DE4FF8AD5F99
+					title: "Maestro de las Herramientas"
+					type: checkmark
+				}
+			]
+			x: 4d
+			y: -0.5d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 1A5ED7B8D2585B7C
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 114C027499221BBB
+					item: "minecraft:wheat"
+					type: item
+				}
+			]
+			x: 6.5d
+			y: -4.5d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 6F310CAC81B1673D
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 22F69B9F6D70AB3C
+					item: "minecraft:potato"
+					type: item
+				}
+			]
+			x: 7.5d
+			y: -6d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 70E696E2CC953EC8
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 054809D78AE30AB7
+					item: "minecraft:beetroot"
+					type: item
+				}
+			]
+			x: 9d
+			y: -7d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 2A73FAA6EF6421D3
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 39C3E54B3AE4F57C
+					item: "minecraft:carrot"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: -6d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 7DDA74DA20AFB975
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 717614F2BC4D72C7
+					item: "minecraft:sweet_berries"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: -3d
+		}
+		{
+			description: [
+				"Vamos a la &6Huerta&r"
+				""
+				"Explora el mundo y recoge lo necesario para empezar tu imperio de Patatas &2¡Terrible!&r"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:wooden_hoe"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: 27A2D0E3F148B50A
+			rewards: [
+				{
+					id: 43C366D05BB0DC5F
+					type: xp_levels
+					xp_levels: 10
+				}
+			]
+			shape: octagon
+			size: 2d
+			tasks: [
+				{
+					id: 1CCB78E001EB51C7
+					title: "A la Huerta"
+					type: checkmark
+				}
+			]
+			x: 9d
+			y: -4.5d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 6D947D63DC13BFA7
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 6BFBF9A8C0A2E53E
+					item: "minecraft:melon_slice"
+					type: item
+				}
+			]
+			x: 7.5d
+			y: -3d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 48B528CAB4EA5194
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 08C1C89E32E2CFEA
+					item: "minecraft:pumpkin"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: -7.5d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 0CBE7A33DB5E6E19
+			tasks: [
+				{
+					count: 10L
+					id: 5594C144419A8722
+					item: "minecraft:apple"
+					type: item
+				}
+			]
+			x: 9d
+			y: -2d
+		}
+		{
+			dependencies: [ 27A2D0E3F148B50A ]
+			id: 22AA04D32D646F17
+			tasks: [
+				{
+					count: 32L
+					id: 39644A8C5D8F415F
+					item: "minecraft:cocoa_beans"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: -4.5d
+		}
+		{
+			dependencies: [
+				6F310CAC81B1673D
+				48B528CAB4EA5194
+				1A5ED7B8D2585B7C
+				2A73FAA6EF6421D3
+				6D947D63DC13BFA7
+				70E696E2CC953EC8
+				7DDA74DA20AFB975
+				0CBE7A33DB5E6E19
+				22AA04D32D646F17
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			icon: "atilas_economy:dracma_copper"
+			id: 5C96B460C7E0AA93
+			rewards: [
+				{
+					count: 5
+					id: 0BA469D3992DF79B
+					item: "atilas_economy:dracma_copper"
+					type: item
+				}
+			]
+			tasks: [
+				{
+					id: 2BCE38B3086DF7C4
+					title: "Maestro Granjero"
+					type: checkmark
+				}
+			]
+			x: 12.5d
+			y: -6d
+		}
+		{
+			dependencies: [
+				3D3EEC40A43DBE02
+				48B528CAB4EA5194
+				1EDDA4966478DCF1
+				1A5ED7B8D2585B7C
+				27D6B3C3B1366F60
+				27A2D0E3F148B50A
+				6D947D63DC13BFA7
+				137FA4666C0CBFD1
+				2076074B4C5602AE
+				704711B81250C16A
+				5C96B460C7E0AA93
+				0B24E79685E07295
+				0067A488702B054C
+				6556F0A96C12DEE7
+				0CBE7A33DB5E6E19
+				22AA04D32D646F17
+				09FF9CFF18349478
+				586132D55270750A
+				124313C28EFD52AC
+				6F310CAC81B1673D
+				3C3A4B6849BA3EF0
+				415A0413F7B1D3E0
+				70E696E2CC953EC8
+				30078754E84D0744
+				5C7A310C49994175
+				7DDA74DA20AFB975
+				1A0271B9049C493A
+				37B921ED409DAC17
+				51A3E8DC90430FE2
+				741E0D145109599C
+				148FD20341BC0B10
+				2A73FAA6EF6421D3
+				152FCC6ADB566976
+				55A49F89E2E562A1
+				5EDB8DBC61D98857
+				06654D9ABDFDD76F
+				45440F63CDEC407F
+				540AC015CC1E7E34
+				18F25599290A6257
+				36F72609DD0A4683
+				502E1CC83D03B6DE
+				0EB4F43B065EC56D
+				53EE6B878BEE8579
+				2D8480E6FFD99B34
+				6697625A76F8ACA7
+				100D5E7F925516B1
+				42525E7B0F90A21D
+				67ECDCD87BB436AF
+				0EF27B639E6DBA48
+				77876F48CC694D99
+				4AAF4692832EE151
+				0592EF0C41A76773
+				1DD70199AA24FD27
+				66C49696151F342D
+				41BA80BB75D569B7
+				202F960BA6145FB3
+				37E0CE6CAFF58CFA
+				797626B97A50C41A
+				343421D2FC6B5C88
+				2F26456531E899AE
+				5C38CF07EB962523
+				30B8287CC8B9AD77
+				7CFD3B49C1CEB3F1
+				04E91FC4B77726D7
+				6492DF17989A9912
+				4D737B516E9FEEB0
+				27D7152E7B807D74
+				560A1593863BE3B7
+				531BBE2C1E29A209
+				7B379FC7FA2261CA
+				4E62CC3A24EDA529
+				76A5E86E6F474891
+				0DD91144B3D0386D
+				378533295C2FE521
+				002BE2847DF847FF
+				097509603312592A
+				77429447BB9AE831
+				6D5F4B0E99ACB14D
+				0E63880247C89E9B
+				2DDDCB76037BFC64
+				7EC5D372ECD08853
+				599A2E89C032B617
+				6EA38FBE210228A7
+				1034E89B96002815
+				13FC127A02843239
+				3735F38FF3E44FE3
+				4841E60A39E9EE1F
+				2A1371494D386CDD
+				371D80F0BC43FE6C
+				3EB03DD2DC7A74DA
+				17299B3EA29110C5
+				057F741109C4956E
+				437D92FCE7998D5D
+				1A34C60BAEBCF045
+				429B689D6847B607
+				63C998B7C34E9677
+				53D717A83ED5B763
+				1DFC90D0D33C36DE
+				30346910B08A9A7E
+				6358252738B13C9D
+				0C9346E0CAEC06CC
+				33FFCAC8AF948E70
+				58B65D825F2E0EC9
+				1DE5ECBB8ADAC0D1
+				2F8129C435126A0F
+				3C0BB04728973A81
+				57E972D40D53618E
+				10DE814B29FE9C0A
+				4A6FB6C7E7A98F65
+				1BFE52E8E3562725
+				5CFEFECF3E19FC4E
+				47283160B4CD5563
+				72239DD0CC4D10D7
+				7E69F1F4AFBEB3C9
+				409CCF61643BA02C
+				6822091AED172044
+				1BABA2E3BC6142C6
+				1DD73064BFE848AB
+				56CB6E14EDB6D599
+				6B10091330A1F851
+				0BE2A5CD56250C7F
+				205AA5708F02055E
+				0196EFF6AF774B61
+				433D9C5EF62D0539
+				259D820F0CA30749
+				0D3A1845DC9BD31C
+				7A307D35C24A0C37
+				579145F6EDBE6EA4
+				66AC1B446CA8B03F
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			icon: "minecraft:oak_log"
+			id: 476BA673075E138A
+			rewards: [
+				{
+					id: 0C97B90598573800
+					type: xp_levels
+					xp_levels: 20
+				}
+			]
+			size: 3d
+			tasks: [
+				{
+					id: 7001A23D647C519C
+					title: "Era Madera Completada!"
+					type: checkmark
+				}
+			]
+			x: 2d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 152FCC6ADB566976 ]
+			id: 66C49696151F342D
+			tasks: [
+				{
+					count: 10L
+					id: 104764DFFDCE1213
+					item: "minecraft:chicken"
+					type: item
+				}
+			]
+			x: -4d
+			y: -1d
+		}
+		{
+			dependencies: [ 152FCC6ADB566976 ]
+			id: 100D5E7F925516B1
+			tasks: [
+				{
+					count: 10L
+					id: 3F9C49DF0456FFB5
+					item: "minecraft:beef"
+					type: item
+				}
+			]
+			x: -2d
+			y: -1d
+		}
+		{
+			dependencies: [ 152FCC6ADB566976 ]
+			id: 0592EF0C41A76773
+			tasks: [
+				{
+					count: 10L
+					id: 0EB73CD00CBC576A
+					item: "minecraft:porkchop"
+					type: item
+				}
+			]
+			x: -3d
+			y: -1d
+		}
+		{
+			dependencies: [ 1DD70199AA24FD27 ]
+			id: 0EF27B639E6DBA48
+			tasks: [
+				{
+					count: 10L
+					id: 61B507E4C5B06BF3
+					item: "minecraft:cooked_chicken"
+					type: item
+				}
+			]
+			x: -4d
+			y: 2d
+		}
+		{
+			dependencies: [ 1DD70199AA24FD27 ]
+			id: 6697625A76F8ACA7
+			tasks: [
+				{
+					count: 10L
+					id: 77CE074BB1B36E0E
+					item: "minecraft:cooked_beef"
+					type: item
+				}
+			]
+			x: -3d
+			y: 2d
+		}
+		{
+			dependencies: [ 1DD70199AA24FD27 ]
+			id: 77876F48CC694D99
+			tasks: [
+				{
+					count: 10L
+					id: 6FF6CB03E8996692
+					item: "minecraft:cooked_porkchop"
+					type: item
+				}
+			]
+			x: -2d
+			y: 2d
+		}
+		{
+			dependencies: [ 152FCC6ADB566976 ]
+			id: 41BA80BB75D569B7
+			tasks: [
+				{
+					count: 10L
+					id: 76F367C880C5C5A0
+					item: "minecraft:mutton"
+					type: item
+				}
+			]
+			x: -1d
+			y: -1d
+		}
+		{
+			dependencies: [ 1DD70199AA24FD27 ]
+			id: 42525E7B0F90A21D
+			tasks: [
+				{
+					count: 10L
+					id: 76F104C59F0CDCA7
+					item: "minecraft:cooked_mutton"
+					type: item
+				}
+			]
+			x: -1d
+			y: 2d
+		}
+		{
+			dependencies: [
+				66C49696151F342D
+				41BA80BB75D569B7
+				100D5E7F925516B1
+				0592EF0C41A76773
+				4AAF4692832EE151
+			]
+			id: 1DD70199AA24FD27
+			tasks: [
+				{
+					id: 279185929993D7E0
+					item: "minecraft:campfire"
+					type: item
+				}
+			]
+			x: -2.5d
+			y: 0.5d
+		}
+		{
+			icon: "minecraft:coal_block"
+			id: 4AAF4692832EE151
+			tasks: [
+				{
+					count: 10L
+					id: 3B31550356F8B6B7
+					item: "minecraft:coal_block"
+					type: item
+				}
+			]
+			x: 0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				6697625A76F8ACA7
+				0EF27B639E6DBA48
+				42525E7B0F90A21D
+				77876F48CC694D99
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			icon: "atilas_economy:dracma_copper"
+			id: 2D8480E6FFD99B34
+			rewards: [
+				{
+					count: 5
+					id: 258AF6B3947C309E
+					item: "atilas_economy:dracma_copper"
+					type: item
+				}
+			]
+			tasks: [
+				{
+					id: 4B27DE309D7C98AE
+					title: "Todo un Carnicero"
+					type: checkmark
+				}
+			]
+			x: -5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 415A0413F7B1D3E0 ]
+			id: 67ECDCD87BB436AF
+			tasks: [
+				{
+					consume_items: true
+					id: 2F3AE66F2DB4BCCE
+					item: {
+						id: "minecraft:crossbow"
+						tag: {
+							Damage: 0
+						}
+						count: 1
+					}
+					type: item
+				}
+			]
+			x: 7d
+			y: -1.5d
+		}
+		{
+			id: 48A0AD73C08F68F4
+			rewards: [
+				{
+					count: 2
+					id: 7A106C27D63FD3FA
+					item: "atilas_economy:dracma_copper"
+					type: item
+				}
+			]
+			tasks: [
+				{
+					consume_items: true
+					count: 500L
+					id: 6C0177FABDD9B58E
+					item: "minecraft:dirt"
+					type: item
+				}
+			]
+			x: 4d
+			y: -6d
+		}
+		{
+			id: 0BE2A5CD56250C7F
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 7CDE54CE4A122287
+					item: "minecraft:stripped_oak_log"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: -0.5d
+		}
+		{
+			id: 0E63880247C89E9B
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 7CED80D00A6EF55E
+					item: "minecraft:stripped_spruce_log"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: -0.5d
+		}
+		{
+			id: 259D820F0CA30749
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 3B556D3FDC00813B
+					item: "minecraft:stripped_birch_log"
+					type: item
+				}
+			]
+			x: 12.5d
+			y: -0.5d
+		}
+		{
+			id: 6B10091330A1F851
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 6BB4C24D351151D4
+					item: "minecraft:stripped_dark_oak_log"
+					type: item
+				}
+			]
+			x: 13.5d
+			y: -0.5d
+		}
+		{
+			id: 097509603312592A
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 784256D9E4993DE6
+					item: "minecraft:stripped_jungle_log"
+					type: item
+				}
+			]
+			x: 14.5d
+			y: -0.5d
+		}
+		{
+			id: 6358252738B13C9D
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 7BCEC71C6C2A9253
+					item: "minecraft:stripped_acacia_log"
+					type: item
+				}
+			]
+			x: 15.5d
+			y: -0.5d
+		}
+		{
+			id: 1A34C60BAEBCF045
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 783354DA4F852B7F
+					item: "minecraft:stripped_cherry_log"
+					type: item
+				}
+			]
+			x: 16.5d
+			y: -0.5d
+		}
+		{
+			id: 205AA5708F02055E
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 38F1CFFD44D290FD
+					item: "minecraft:stripped_mangrove_log"
+					type: item
+				}
+			]
+			x: 17.5d
+			y: -0.5d
+		}
+		{
+			id: 1BFE52E8E3562725
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 5989A1762860FA35
+					item: "minecraft:stripped_bamboo_block"
+					type: item
+				}
+			]
+			x: 18.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [ 0BE2A5CD56250C7F ]
+			id: 3735F38FF3E44FE3
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 49DE93BEC26B4BE5
+					item: "minecraft:oak_planks"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 0E63880247C89E9B ]
+			id: 10DE814B29FE9C0A
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 523A624D068F7240
+					item: "minecraft:spruce_planks"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 259D820F0CA30749 ]
+			id: 0C9346E0CAEC06CC
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 16BFDF2403B8BD98
+					item: "minecraft:birch_planks"
+					type: item
+				}
+			]
+			x: 12.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 6B10091330A1F851 ]
+			id: 797626B97A50C41A
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 1C1042C6FFE01FC2
+					item: "minecraft:dark_oak_planks"
+					type: item
+				}
+			]
+			x: 13.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 097509603312592A ]
+			id: 579145F6EDBE6EA4
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 6EE442EE484FA102
+					item: "minecraft:jungle_planks"
+					type: item
+				}
+			]
+			x: 14.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 6358252738B13C9D ]
+			id: 2DDDCB76037BFC64
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 20EAD0B3141D3F25
+					item: "minecraft:acacia_planks"
+					type: item
+				}
+			]
+			x: 15.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 1A34C60BAEBCF045 ]
+			id: 437D92FCE7998D5D
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 1F89563BCF8E99FD
+					item: "minecraft:cherry_planks"
+					type: item
+				}
+			]
+			x: 16.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 205AA5708F02055E ]
+			id: 7E69F1F4AFBEB3C9
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 2DB984BA368A2403
+					item: "minecraft:mangrove_planks"
+					type: item
+				}
+			]
+			x: 17.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 1BFE52E8E3562725 ]
+			id: 3C0BB04728973A81
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 56D5B9259017B427
+					item: "minecraft:bamboo_planks"
+					type: item
+				}
+			]
+			x: 18.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [ 3735F38FF3E44FE3 ]
+			id: 202F960BA6145FB3
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 2A296CB205AB6EB6
+					item: "minecraft:oak_stairs"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 10DE814B29FE9C0A ]
+			id: 0D3A1845DC9BD31C
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 781A2F0BCF94CBD8
+					item: "minecraft:spruce_stairs"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 0C9346E0CAEC06CC ]
+			id: 7B379FC7FA2261CA
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 3993D8D20F5E1731
+					item: "minecraft:birch_stairs"
+					type: item
+				}
+			]
+			x: 12.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 797626B97A50C41A ]
+			id: 371D80F0BC43FE6C
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 66D37AE726BA0969
+					item: "minecraft:dark_oak_stairs"
+					type: item
+				}
+			]
+			x: 13.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 579145F6EDBE6EA4 ]
+			id: 7EC5D372ECD08853
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 60A95F1F2DC0EEB6
+					item: "minecraft:jungle_stairs"
+					type: item
+				}
+			]
+			x: 14.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 2DDDCB76037BFC64 ]
+			id: 5CFEFECF3E19FC4E
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 4FE44A142F33FB7A
+					item: "minecraft:acacia_stairs"
+					type: item
+				}
+			]
+			x: 15.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 437D92FCE7998D5D ]
+			id: 2F8129C435126A0F
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 5B7F9DD3DB80B683
+					item: "minecraft:cherry_stairs"
+					type: item
+				}
+			]
+			x: 16.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 7E69F1F4AFBEB3C9 ]
+			id: 37E0CE6CAFF58CFA
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 36B42A6EBC724F99
+					item: "minecraft:mangrove_stairs"
+					type: item
+				}
+			]
+			x: 17.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 3C0BB04728973A81 ]
+			id: 1DFC90D0D33C36DE
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 544B30D7788757D8
+					item: "minecraft:bamboo_stairs"
+					type: item
+				}
+			]
+			x: 18.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [ 202F960BA6145FB3 ]
+			id: 0196EFF6AF774B61
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 5202DFBCB86EADD3
+					item: "minecraft:oak_slab"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 0D3A1845DC9BD31C ]
+			id: 1DD73064BFE848AB
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 3343AA9F5786A6BB
+					item: "minecraft:spruce_slab"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 7B379FC7FA2261CA ]
+			id: 1BABA2E3BC6142C6
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 25C777BBDF61904B
+					item: "minecraft:birch_slab"
+					type: item
+				}
+			]
+			x: 12.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 371D80F0BC43FE6C ]
+			id: 76A5E86E6F474891
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 4545F242402A3532
+					item: "minecraft:dark_oak_slab"
+					type: item
+				}
+			]
+			x: 13.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 7EC5D372ECD08853 ]
+			id: 378533295C2FE521
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 3AA0645FFFF6C134
+					item: "minecraft:jungle_slab"
+					type: item
+				}
+			]
+			x: 14.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 5CFEFECF3E19FC4E ]
+			id: 560A1593863BE3B7
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 08B06DBD18717456
+					item: "minecraft:acacia_slab"
+					type: item
+				}
+			]
+			x: 15.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 2F8129C435126A0F ]
+			id: 04E91FC4B77726D7
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 6635108F5E9A5FD3
+					item: "minecraft:cherry_slab"
+					type: item
+				}
+			]
+			x: 16.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 37E0CE6CAFF58CFA ]
+			id: 1DE5ECBB8ADAC0D1
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 41A9858E8F62FD2C
+					item: "minecraft:mangrove_slab"
+					type: item
+				}
+			]
+			x: 17.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 1DFC90D0D33C36DE ]
+			id: 409CCF61643BA02C
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: 308FE2F86F180BC0
+					item: "minecraft:bamboo_slab"
+					type: item
+				}
+			]
+			x: 18.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [ 0196EFF6AF774B61 ]
+			id: 53D717A83ED5B763
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 7343D3F07F47E6B2
+					item: "minecraft:oak_fence"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 1DD73064BFE848AB ]
+			id: 6492DF17989A9912
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 121B1C378DED6B08
+					item: "minecraft:spruce_fence"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 1BABA2E3BC6142C6 ]
+			id: 6822091AED172044
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 4E0C9CEE2D148798
+					item: "minecraft:birch_fence"
+					type: item
+				}
+			]
+			x: 12.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 76A5E86E6F474891 ]
+			id: 13FC127A02843239
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 4CEDBB9B2B51AAF8
+					item: "minecraft:dark_oak_fence"
+					type: item
+				}
+			]
+			x: 13.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 378533295C2FE521 ]
+			id: 343421D2FC6B5C88
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 0FC0F726AB9399B1
+					item: "minecraft:jungle_fence"
+					type: item
+				}
+			]
+			x: 14.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 560A1593863BE3B7 ]
+			id: 57E972D40D53618E
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 24F3C50B8BE382D6
+					item: "minecraft:acacia_fence"
+					type: item
+				}
+			]
+			x: 15.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 04E91FC4B77726D7 ]
+			id: 4841E60A39E9EE1F
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 43FEAECCF1E79E90
+					item: "minecraft:cherry_fence"
+					type: item
+				}
+			]
+			x: 16.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 1DE5ECBB8ADAC0D1 ]
+			id: 7A307D35C24A0C37
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 16636CFF7206E4AD
+					item: "minecraft:mangrove_fence"
+					type: item
+				}
+			]
+			x: 17.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 409CCF61643BA02C ]
+			id: 17299B3EA29110C5
+			tasks: [
+				{
+					consume_items: true
+					count: 10L
+					id: 1E52DEB4A571D258
+					item: "minecraft:bamboo_fence"
+					type: item
+				}
+			]
+			x: 18.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [ 53D717A83ED5B763 ]
+			id: 33FFCAC8AF948E70
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 16A375DA6BD95A06
+					item: "minecraft:oak_door"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 6492DF17989A9912 ]
+			id: 3EB03DD2DC7A74DA
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 028B8DA93487A2DB
+					item: "minecraft:spruce_door"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 6822091AED172044 ]
+			id: 1034E89B96002815
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 4EA16978CA2B3A21
+					item: "minecraft:birch_door"
+					type: item
+				}
+			]
+			x: 12.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 13FC127A02843239 ]
+			id: 2F26456531E899AE
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 3BB8DCC21671BDC0
+					item: "minecraft:dark_oak_door"
+					type: item
+				}
+			]
+			x: 13.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 343421D2FC6B5C88 ]
+			id: 77429447BB9AE831
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 1672A3EBC077F3C4
+					item: "minecraft:jungle_door"
+					type: item
+				}
+			]
+			x: 14.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 57E972D40D53618E ]
+			id: 6EA38FBE210228A7
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 5DBF22D531AB2ACC
+					item: "minecraft:acacia_door"
+					type: item
+				}
+			]
+			x: 15.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 4841E60A39E9EE1F ]
+			id: 4D737B516E9FEEB0
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 4C7C226483206FBA
+					item: "minecraft:cherry_door"
+					type: item
+				}
+			]
+			x: 16.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 7A307D35C24A0C37 ]
+			id: 6D5F4B0E99ACB14D
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 0D59C07CFE2A8213
+					item: "minecraft:mangrove_door"
+					type: item
+				}
+			]
+			x: 17.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 17299B3EA29110C5 ]
+			id: 002BE2847DF847FF
+			tasks: [
+				{
+					consume_items: true
+					count: 6L
+					id: 33AA7E127D341A3C
+					item: "minecraft:bamboo_door"
+					type: item
+				}
+			]
+			x: 18.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [ 33FFCAC8AF948E70 ]
+			id: 531BBE2C1E29A209
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 6F5B1A4EC95D7F24
+					item: "minecraft:oak_trapdoor"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [ 3EB03DD2DC7A74DA ]
+			id: 4E62CC3A24EDA529
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 53AB9DA9F85C2F2C
+					item: "minecraft:spruce_trapdoor"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [ 1034E89B96002815 ]
+			id: 4A6FB6C7E7A98F65
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 6FD4C4DE6CE1E6F9
+					item: "minecraft:birch_trapdoor"
+					type: item
+				}
+			]
+			x: 12.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [ 2F26456531E899AE ]
+			id: 0DD91144B3D0386D
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 2A2C921B39A934C6
+					item: "minecraft:dark_oak_trapdoor"
+					type: item
+				}
+			]
+			x: 13.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [ 77429447BB9AE831 ]
+			id: 599A2E89C032B617
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 6D150D396CFD68C0
+					item: "minecraft:jungle_trapdoor"
+					type: item
+				}
+			]
+			x: 14.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [ 6EA38FBE210228A7 ]
+			id: 47283160B4CD5563
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 53DD420B3D204D9A
+					item: "minecraft:acacia_trapdoor"
+					type: item
+				}
+			]
+			x: 15.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [ 4D737B516E9FEEB0 ]
+			id: 2A1371494D386CDD
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 3C77EC9017BDCAF4
+					item: "minecraft:cherry_trapdoor"
+					type: item
+				}
+			]
+			x: 16.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [ 6D5F4B0E99ACB14D ]
+			id: 66AC1B446CA8B03F
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 51622FD8B19EA56C
+					item: "minecraft:mangrove_trapdoor"
+					type: item
+				}
+			]
+			x: 17.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [ 002BE2847DF847FF ]
+			id: 057F741109C4956E
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: 19F4C6D142F10444
+					item: "minecraft:bamboo_trapdoor"
+					type: item
+				}
+			]
+			x: 18.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				0DD91144B3D0386D
+				4A6FB6C7E7A98F65
+				057F741109C4956E
+				599A2E89C032B617
+				47283160B4CD5563
+				531BBE2C1E29A209
+				4E62CC3A24EDA529
+				2A1371494D386CDD
+				66AC1B446CA8B03F
+			]
+			hide_until_deps_complete: true
+			id: 7CFD3B49C1CEB3F1
+			rewards: [
+				{
+					count: 10
+					id: 167B31DB7B3C32CE
+					item: "atilas_economy:dracma_copper"
+					type: item
+				}
+			]
+			tasks: [
+				{
+					id: 6CCA737A11FEC485
+					title: "Experto en Madera"
+					type: checkmark
+				}
+			]
+			x: 14.5d
+			y: 7d
+		}
+		{
+			id: 58B65D825F2E0EC9
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 294F1B7956B6E17B
+					item: "minecraft:oak_sapling"
+					type: item
+				}
+			]
+			x: 10.5d
+			y: -1.5d
+		}
+		{
+			id: 56CB6E14EDB6D599
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 344EA2C64014ED49
+					item: "minecraft:spruce_sapling"
+					type: item
+				}
+			]
+			x: 11.5d
+			y: -1.5d
+		}
+		{
+			id: 63C998B7C34E9677
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 2B7130682D70E8DB
+					item: "minecraft:birch_sapling"
+					type: item
+				}
+			]
+			x: 12.5d
+			y: -1.5d
+		}
+		{
+			id: 5C38CF07EB962523
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 7D678DD5F4607BD1
+					item: "minecraft:dark_oak_sapling"
+					type: item
+				}
+			]
+			x: 13.5d
+			y: -1.5d
+		}
+		{
+			id: 429B689D6847B607
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 0BFCDD1EA2248965
+					item: "minecraft:jungle_sapling"
+					type: item
+				}
+			]
+			x: 14.5d
+			y: -1.5d
+		}
+		{
+			id: 30B8287CC8B9AD77
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 5412443997C8015F
+					item: "minecraft:acacia_sapling"
+					type: item
+				}
+			]
+			x: 15.5d
+			y: -1.5d
+		}
+		{
+			id: 27D7152E7B807D74
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 7585889E60344CC5
+					item: "minecraft:cherry_sapling"
+					type: item
+				}
+			]
+			x: 16.5d
+			y: -1.5d
+		}
+		{
+			id: 30346910B08A9A7E
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 0142681C9F3FAB34
+					item: "minecraft:mangrove_propagule"
+					type: item
+				}
+			]
+			x: 17.5d
+			y: -1.5d
+		}
+		{
+			id: 433D9C5EF62D0539
+			tasks: [
+				{
+					consume_items: true
+					count: 20L
+					id: 3F0D6BAC80494083
+					item: "minecraft:bamboo"
+					type: item
+				}
+			]
+			x: 18.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				56CB6E14EDB6D599
+				30346910B08A9A7E
+				58B65D825F2E0EC9
+				429B689D6847B607
+				63C998B7C34E9677
+				433D9C5EF62D0539
+				5C38CF07EB962523
+				30B8287CC8B9AD77
+				27D7152E7B807D74
+			]
+			id: 72239DD0CC4D10D7
+			rewards: [
+				{
+					count: 2
+					id: 0336B8D0CBBF23A7
+					item: "atilas_economy:dracma_copper"
+					type: item
+				}
+			]
+			tasks: [
+				{
+					id: 7B4480F640EB1A70
+					title: "Consigue Retoños"
+					type: checkmark
+				}
+			]
+			x: 14.5d
+			y: -2.5d
+		}
+	]
+	title: "&6Cuero/Madera"
+}
