@@ -106,6 +106,54 @@ function TableView({ data, onUpdate }) {
         });
     };
 
+    const formatSingleTask = (task) => {
+        if (!task) return null;
+        let label = task.type;
+        if (task.type === 'item') {
+            const itemId = typeof task.item === 'string' ? task.item : (task.item?.id || '');
+            label += ':' + itemId.replace('minecraft:', '');
+            if (task.count && (task.count.value > 1 || task.count > 1)) {
+                label += ` x${task.count.value || task.count}`;
+            }
+        } else if (task.type === 'kill') {
+            const entity = (task.entity || '').replace('minecraft:', '');
+            label += ':' + entity;
+            if (task.value && (task.value.value > 1 || task.value > 1)) {
+                label += ` x${task.value.value || task.value}`;
+            }
+        }
+        return { type: task.type, label, original: task };
+    };
+
+    const getQuestTasksSummary = (quest, allQuests) => {
+        const hasOnlyCheckmarks = !quest.tasks || quest.tasks.length === 0 || quest.tasks.every(t => t.type === 'checkmark');
+        
+        if (hasOnlyCheckmarks && quest.dependencies && quest.dependencies.length > 0) {
+            // It's a dependent quest, get tasks from dependencies (1st level)
+            const badges = [];
+            quest.dependencies.forEach(depId => {
+                const depIdStr = typeof depId === 'string' ? depId.replace(/['"]/g, '') : depId;
+                const depQuest = allQuests.find(q => q.id === depIdStr);
+                if (depQuest && depQuest.tasks) {
+                    depQuest.tasks.forEach(t => {
+                        if (t.type !== 'checkmark') {
+                            const formatted = formatSingleTask(t);
+                            if (formatted) {
+                                badges.push({ ...formatted, isDep: true });
+                            }
+                        }
+                    });
+                }
+            });
+            if (badges.length > 0) return badges;
+            return [{ type: 'checkmark', label: 'checkmark' }];
+        } else {
+            // Normal quest tasks
+            if (!quest.tasks || quest.tasks.length === 0) return [];
+            return quest.tasks.map(t => formatSingleTask(t)).filter(Boolean);
+        }
+    };
+
     const renderQuestsTable = () => {
         const quests = data.quests || [];
 
@@ -544,6 +592,10 @@ function TableView({ data, onUpdate }) {
 
         const filterConfig = {
             questId: (r) => r.quest.id,
+            questTasks: (r) => {
+                const summary = getQuestTasksSummary(r.quest, data.quests || []);
+                return summary.map(t => t.label).join(' ');
+            },
             rewardId: (r) => r.reward.id,
             type: (r) => r.reward.type,
             itemId: (r) => {
@@ -562,6 +614,7 @@ function TableView({ data, onUpdate }) {
                 <thead>
                     <tr>
                         <th>Quest ID</th>
+                        <th>Quest Tasks</th>
                         <th>Reward ID</th>
                         <th>Type</th>
                         <th>Item ID</th>
@@ -578,6 +631,15 @@ function TableView({ data, onUpdate }) {
                                 placeholder="Filter..."
                                 value={columnFilters.questId || ''}
                                 onChange={(e) => handleColumnFilter('questId', e.target.value)}
+                            />
+                        </th>
+                        <th>
+                            <input
+                                type="text"
+                                className="column-filter"
+                                placeholder="Filter..."
+                                value={columnFilters.questTasks || ''}
+                                onChange={(e) => handleColumnFilter('questTasks', e.target.value)}
                             />
                         </th>
                         <th>
@@ -622,9 +684,21 @@ function TableView({ data, onUpdate }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {filteredRewards.map(({ quest, reward, rIndex, qIndex }) => (
+                    {filteredRewards.map(({ quest, reward, rIndex, qIndex }) => {
+                        const tasksSummary = getQuestTasksSummary(quest, data.quests || []);
+                        return (
                         <tr key={`${quest.id}-${reward.id}`}>
                             <td className="readonly">{quest.id}</td>
+                            <td>
+                                <div className="task-badges-container">
+                                    {tasksSummary.map((t, idx) => (
+                                        <span key={idx} className={`task-badge type-${t.type} ${t.isDep ? 'is-dep' : ''}`} title={t.label}>
+                                            {t.isDep && <span className="task-badge-prefix">[Dep]</span>}
+                                            {t.label}
+                                        </span>
+                                    ))}
+                                </div>
+                            </td>
                             <td className="readonly">{reward.id}</td>
                             <td className="readonly">{reward.type}</td>
                             <td>
@@ -707,7 +781,8 @@ function TableView({ data, onUpdate }) {
                                 )}
                             </td>
                         </tr>
-                    ))}
+                        );
+                    })}
                 </tbody>
             </table>
         );
