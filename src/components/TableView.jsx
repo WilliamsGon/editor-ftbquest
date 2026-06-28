@@ -1,5 +1,53 @@
-
 import React, { useState } from 'react';
+
+const ResizableHeader = ({ children }) => {
+    const [width, setWidth] = useState(null);
+    const [isResizing, setIsResizing] = useState(false);
+    
+    const startResize = (e) => {
+        e.preventDefault();
+        const startX = e.clientX;
+        const th = e.target.parentElement;
+        const startWidth = th.getBoundingClientRect().width;
+        setIsResizing(true);
+        
+        const onMouseMove = (moveEvent) => {
+            const newWidth = Math.max(50, startWidth + (moveEvent.clientX - startX));
+            setWidth(newWidth);
+        };
+        
+        const onMouseUp = () => {
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+            setIsResizing(false);
+        };
+        
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    };
+
+    return (
+        <th style={{ width: width ? `${width}px` : 'auto', minWidth: width ? `${width}px` : 'auto', position: 'relative' }}>
+            {children}
+            <div 
+                onMouseDown={startResize}
+                style={{
+                    position: 'absolute',
+                    right: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: '6px',
+                    cursor: 'col-resize',
+                    zIndex: 1,
+                    backgroundColor: isResizing ? 'rgba(0, 210, 255, 0.5)' : 'transparent',
+                    transition: 'background-color 0.2s'
+                }}
+                onMouseEnter={(e) => !isResizing && (e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)')}
+                onMouseLeave={(e) => !isResizing && (e.target.style.backgroundColor = 'transparent')}
+            />
+        </th>
+    );
+};
 
 function TableView({ data, onUpdate }) {
     const [filter, setFilter] = useState('quests'); // 'quests', 'tasks', 'rewards'
@@ -172,16 +220,16 @@ function TableView({ data, onUpdate }) {
             <table className="data-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>X</th>
-                        <th>Y</th>
-                        <th>Shape</th>
-                        <th>Size</th>
-                        <th>Icon</th>
-                        <th>Hide Dep Lines</th>
-                        <th>Hide Until Complete</th>
-                        <th>Tasks</th>
-                        <th>Rewards</th>
+                        <ResizableHeader>ID</ResizableHeader>
+                        <ResizableHeader>X</ResizableHeader>
+                        <ResizableHeader>Y</ResizableHeader>
+                        <ResizableHeader>Shape</ResizableHeader>
+                        <ResizableHeader>Size</ResizableHeader>
+                        <ResizableHeader>Icon</ResizableHeader>
+                        <ResizableHeader>Hide Dep Lines</ResizableHeader>
+                        <ResizableHeader>Hide Until Complete</ResizableHeader>
+                        <ResizableHeader>Tasks</ResizableHeader>
+                        <ResizableHeader>Rewards</ResizableHeader>
                     </tr>
                     <tr className="filter-row">
                         <th>
@@ -399,15 +447,15 @@ function TableView({ data, onUpdate }) {
             <table className="data-table">
                 <thead>
                     <tr>
-                        <th>Quest ID</th>
-                        <th>Task ID</th>
-                        <th>Type</th>
-                        <th>Item ID</th>
-                        <th>Set as Quest Icon</th>
-                        <th>Count</th>
-                        <th>Entity/Dim/Biome</th>
-                        <th>Value</th>
-                        <th>Consume Items</th>
+                        <ResizableHeader>Quest ID</ResizableHeader>
+                        <ResizableHeader>Task ID</ResizableHeader>
+                        <ResizableHeader>Type</ResizableHeader>
+                        <ResizableHeader>Item ID</ResizableHeader>
+                        <ResizableHeader>Set as Quest Icon</ResizableHeader>
+                        <ResizableHeader>Count</ResizableHeader>
+                        <ResizableHeader>Entity/Dim/Biome</ResizableHeader>
+                        <ResizableHeader>Value</ResizableHeader>
+                        <ResizableHeader>Consume Items</ResizableHeader>
                     </tr>
                     <tr className="filter-row">
                         <th>
@@ -613,15 +661,15 @@ function TableView({ data, onUpdate }) {
             <table className="data-table">
                 <thead>
                     <tr>
-                        <th>Quest ID</th>
-                        <th>Quest Tasks</th>
-                        <th>Reward ID</th>
-                        <th>Type</th>
-                        <th>Item ID</th>
-                        <th>Set as Quest Icon</th>
-                        <th>Count/Amount</th>
-                        <th>XP/XP Levels</th>
-                        <th>Command</th>
+                        <ResizableHeader>Quest ID</ResizableHeader>
+                        <ResizableHeader>Quest Tasks</ResizableHeader>
+                        <ResizableHeader>Reward ID</ResizableHeader>
+                        <ResizableHeader>Type</ResizableHeader>
+                        <ResizableHeader>Item ID</ResizableHeader>
+                        <ResizableHeader>Set as Quest Icon</ResizableHeader>
+                        <ResizableHeader>Count/Amount</ResizableHeader>
+                        <ResizableHeader>XP/XP Levels</ResizableHeader>
+                        <ResizableHeader>Command</ResizableHeader>
                     </tr>
                     <tr className="filter-row">
                         <th>
