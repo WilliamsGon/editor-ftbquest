@@ -4,7 +4,7 @@ import { TASK_TYPES, REWARD_TYPES, getTaskFields, getRewardFields } from '../uti
 /**
  * Component to render dynamic fields based on task type
  */
-export function TaskFields({ task, index, onFieldChange, snbtVersion }) {
+export function TaskFields({ task, index, onFieldChange, snbtVersion, onSetAsIcon }) {
     const taskType = task.type;
 
     // Helper to get value, handling SNBT number objects
@@ -94,6 +94,13 @@ export function TaskFields({ task, index, onFieldChange, snbtVersion }) {
                             <option value="strict">Strict</option>
                             <option value="fuzzy">Fuzzy</option>
                         </select>
+                    </div>
+                )}
+                {onSetAsIcon && (
+                    <div className="form-group">
+                        <button type="button" className="btn btn-secondary btn-sm" onClick={() => onSetAsIcon(task.item || task.icon)}>
+                            Set as Quest Icon
+                        </button>
                     </div>
                 )}
             </>
@@ -316,7 +323,7 @@ export function TaskFields({ task, index, onFieldChange, snbtVersion }) {
 /**
  * Component to render dynamic fields based on reward type
  */
-export function RewardFields({ reward, index, onFieldChange, snbtVersion }) {
+export function RewardFields({ reward, index, onFieldChange, snbtVersion, onSetAsIcon }) {
     const rewardType = reward.type;
 
     // Helper to get value, handling SNBT number objects
@@ -391,6 +398,13 @@ export function RewardFields({ reward, index, onFieldChange, snbtVersion }) {
                             value={getValue(reward.random_bonus) || 0}
                             onChange={(e) => onFieldChange('random_bonus', setValue(reward.random_bonus, e.target.value))}
                         />
+                    </div>
+                )}
+                {onSetAsIcon && (
+                    <div className="form-group">
+                        <button type="button" className="btn btn-secondary btn-sm" onClick={() => onSetAsIcon(reward.item || reward.icon)}>
+                            Set as Quest Icon
+                        </button>
                     </div>
                 )}
             </>

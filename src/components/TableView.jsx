@@ -115,7 +115,7 @@ function TableView({ data, onUpdate }) {
             y: (q) => q.y?.value || q.y,
             shape: (q) => q.shape,
             size: (q) => q.size?.value || q.size,
-            icon: (q) => q.icon?.id,
+            icon: (q) => typeof q.icon === 'string' ? q.icon : q.icon?.id,
         };
 
         const filteredQuests = applyFilters(quests, filterConfig);
@@ -292,8 +292,8 @@ function TableView({ data, onUpdate }) {
                                 <td>
                                     <input
                                         type="text"
-                                        value={getCellValue(`quests.${originalIndex}.icon.id`, quest.icon?.id || '')}
-                                        onChange={(e) => handleCellEdit(`quests.${originalIndex}.icon.id`, e.target.value)}
+                                        value={getCellValue(typeof quest.icon === 'string' ? `quests.${originalIndex}.icon` : `quests.${originalIndex}.icon.id`, typeof quest.icon === 'string' ? quest.icon : (quest.icon?.id || ''))}
+                                        onChange={(e) => handleCellEdit(typeof quest.icon === 'string' ? `quests.${originalIndex}.icon` : `quests.${originalIndex}.icon.id`, e.target.value)}
                                         className="table-input"
                                         placeholder="minecraft:item"
                                     />
@@ -355,6 +355,7 @@ function TableView({ data, onUpdate }) {
                         <th>Task ID</th>
                         <th>Type</th>
                         <th>Item ID</th>
+                        <th>Set as Quest Icon</th>
                         <th>Count</th>
                         <th>Entity/Dim/Biome</th>
                         <th>Value</th>
@@ -397,6 +398,7 @@ function TableView({ data, onUpdate }) {
                                 onChange={(e) => handleColumnFilter('itemId', e.target.value)}
                             />
                         </th>
+                        <th></th>
                         <th></th>
                         <th>
                             <input
@@ -471,6 +473,17 @@ function TableView({ data, onUpdate }) {
                                                 placeholder="minecraft:item"
                                             />
                                         )
+                                    )}
+                                </td>
+                                <td style={{ textAlign: 'center' }}>
+                                    {(task.item || task.icon) && (
+                                        <button 
+                                            className="checkbox-action-btn"
+                                            title="Set as Quest Icon"
+                                            onClick={() => handleCellEdit(`quests.${qIndex}.icon`, task.icon || task.item)}
+                                        >
+                                            🖼️
+                                        </button>
                                     )}
                                 </td>
                                 <td>
@@ -552,6 +565,7 @@ function TableView({ data, onUpdate }) {
                         <th>Reward ID</th>
                         <th>Type</th>
                         <th>Item ID</th>
+                        <th>Set as Quest Icon</th>
                         <th>Count/Amount</th>
                         <th>XP/XP Levels</th>
                         <th>Command</th>
@@ -595,6 +609,7 @@ function TableView({ data, onUpdate }) {
                         </th>
                         <th></th>
                         <th></th>
+                        <th></th>
                         <th>
                             <input
                                 type="text"
@@ -631,6 +646,17 @@ function TableView({ data, onUpdate }) {
                                             placeholder="minecraft:item"
                                         />
                                     )
+                                )}
+                            </td>
+                            <td style={{ textAlign: 'center' }}>
+                                {(reward.item || reward.icon) && (
+                                    <button 
+                                        className="checkbox-action-btn"
+                                        title="Set as Quest Icon"
+                                        onClick={() => handleCellEdit(`quests.${qIndex}.icon`, reward.icon || reward.item)}
+                                    >
+                                        🖼️
+                                    </button>
                                 )}
                             </td>
                             <td>

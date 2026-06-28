@@ -187,8 +187,14 @@ function QuestEditor({ quest, onUpdate, onClose, snbtVersion }) {
                                     <label>Icon Item ID</label>
                                     <input
                                         type="text"
-                                        value={editedQuest.icon ? (editedQuest.icon.id || '') : ''}
-                                        onChange={(e) => handleNestedChange('icon', 'id', e.target.value)}
+                                        value={typeof editedQuest.icon === 'string' ? editedQuest.icon : (editedQuest.icon?.id || '')}
+                                        onChange={(e) => {
+                                            if (editedQuest.icon && typeof editedQuest.icon === 'object') {
+                                                handleNestedChange('icon', 'id', e.target.value);
+                                            } else {
+                                                handleChange('icon', e.target.value);
+                                            }
+                                        }}
                                         placeholder="minecraft:stone"
                                     />
                                 </div>
@@ -252,6 +258,7 @@ function QuestEditor({ quest, onUpdate, onClose, snbtVersion }) {
                                                 task={task}
                                                 index={index}
                                                 onFieldChange={(field, value) => handleArrayItemChange('tasks', index, field, value)}
+                                                onSetAsIcon={() => handleChange('icon', task.icon || task.item)}
                                                 snbtVersion={snbtVersion}
                                             />
                                         </div>
@@ -279,6 +286,7 @@ function QuestEditor({ quest, onUpdate, onClose, snbtVersion }) {
                                                 reward={reward}
                                                 index={index}
                                                 onFieldChange={(field, value) => handleArrayItemChange('rewards', index, field, value)}
+                                                onSetAsIcon={() => handleChange('icon', reward.icon || reward.item)}
                                                 snbtVersion={snbtVersion}
                                             />
                                         </div>
