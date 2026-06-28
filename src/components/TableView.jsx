@@ -501,7 +501,7 @@ function TableView({ data, onUpdate }) {
                             <tr key={`${quest.id}-${task.id}`}>
                                 <td className="readonly">{quest.id}</td>
                                 <td className="readonly">{task.id}</td>
-                                <td className="readonly">{task.type}</td>
+                                <td className="readonly"><span className={`task-badge type-${task.type}`}>{task.type}</span></td>
                                 <td>
                                     {task.item && (
                                         typeof task.item === 'object' && task.item?.id === 'ftbfiltersystem:smart_filter' ? (
@@ -691,16 +691,21 @@ function TableView({ data, onUpdate }) {
                             <td className="readonly">{quest.id}</td>
                             <td>
                                 <div className="task-badges-container">
-                                    {tasksSummary.map((t, idx) => (
+                                    {tasksSummary.slice(0, 3).map((t, idx) => (
                                         <span key={idx} className={`task-badge type-${t.type} ${t.isDep ? 'is-dep' : ''}`} title={t.label}>
                                             {t.isDep && <span className="task-badge-prefix">[Dep]</span>}
                                             {t.label}
                                         </span>
                                     ))}
+                                    {tasksSummary.length > 3 && (
+                                        <span className="task-badge" title={tasksSummary.slice(3).map(t => t.label).join(', ')}>
+                                            +{tasksSummary.length - 3} más
+                                        </span>
+                                    )}
                                 </div>
                             </td>
                             <td className="readonly">{reward.id}</td>
-                            <td className="readonly">{reward.type}</td>
+                            <td className="readonly"><span className={`task-badge type-${reward.type}`}>{reward.type}</span></td>
                             <td>
                                 {reward.item && (
                                     typeof reward.item === 'object' && reward.item?.id === 'ftbfiltersystem:smart_filter' ? (
